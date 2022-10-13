@@ -1,13 +1,8 @@
 # frozen_string_literal: true
 
 def caesar_cipher(string, shift_int)
-  split_string = string.split('')
-  # first returns a new array with the ordinal int of the char
-  # then returns the sum of the given int and the ordinal int
-  shifted_ord_ints = split_string.map(&:ord).map do |char|
-    char + shift_int
-  end
-  checked_ints = shifted_ord_ints.map do |int|
+  shift_character_ord = shift_character_ord(string, shift_int)
+  checked_ints = shift_character_ord.map do |int|
     if int > 90 && int < 97
       int_diff = int - 90
       64 + int_diff
@@ -21,4 +16,11 @@ def caesar_cipher(string, shift_int)
   checked_ints.map(&:chr).join('')
 end
 
+# returns an array containing shifted ordinal integer
+def shift_character_ord(string, shift_int)
+  split_string = string.split('')
+  split_string.map(&:ord).map do |char|
+    char + shift_int
+  end
+end
 # puts caesar_cipher('Aziz', 3)
