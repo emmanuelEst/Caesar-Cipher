@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# returns an encrypted string using Caesar's cipher
 def caesar_cipher(string, shift_int)
   split_string = string.split('')
   shift_character_ord = shift_character_ord(split_string, shift_int)
@@ -42,3 +43,6 @@ def lower?(split_string, index)
   regex = /[[:lower:]]/
   regex.match?(split_string[index])
 end
+
+# To use this script write `puts caesar_cipher(<string>, <shift_integer>)`
+# ex => puts caesar_cipher('HeLLo World')
