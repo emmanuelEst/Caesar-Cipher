@@ -10,7 +10,11 @@ end
 def shift_character_ord(string, shift_int)
   split_string = string.split('')
   split_string.map(&:ord).map do |char|
-    char + shift_int
+    if char == 32
+      char
+    else
+      char + shift_int
+    end
   end
 end
 
