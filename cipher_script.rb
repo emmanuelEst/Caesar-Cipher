@@ -14,18 +14,14 @@ def shift_character_ord(string, shift_int)
   end
 end
 
-def valid_alpha_int (shifted_array)
+def valid_alpha_int(shifted_array)
   shifted_array.map do |int|
     if int > 90 && int < 97
-      int_diff = int - 90
-      64 + int_diff
+      64 + (int - 90)
     elsif int > 122
-      int_diff = int - 122
-      96 + int_diff
+      96 + (int - 122)
     else
       int
     end
   end
 end
-
-puts caesar_cipher('Aziz', 3)
